@@ -13,9 +13,19 @@ get '/secret' do
     "Makers is lots of fun!"
 end
 
-get '/cat' do 
+get '/random-cat' do 
 
-  @cat_name = ["Amigo", "Misty", "Almond"].sample
+  @name = ["Amigo", "Misty", "Almond"].sample
+
+  erb(:index) # method from templating system that renders file called index.erb
+
+end 
+
+get '/named-cat' do 
+
+  # p params
+
+  @name = params[:name]
 
   erb(:index) # method from templating system that renders file called index.erb
 
