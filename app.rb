@@ -1,5 +1,9 @@
 require 'sinatra'
 require 'sinatra/reloader' if development? 
+
+
+
+
 # routing file 
 get '/' do
   "hello!"
@@ -10,5 +14,10 @@ get '/secret' do
 end
 
 get '/cat' do 
-    erb(:index) # method from templating system that renders file called index.erb
+
+  @cat_name = ["Amigo", "Misty", "Almond"].sample
+
+  erb(:index) # method from templating system that renders file called index.erb
+
 end 
+
